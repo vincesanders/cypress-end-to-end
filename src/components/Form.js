@@ -115,12 +115,13 @@ export default function Form() {
           onChange={inputChange}
         />
         {errors.email.length > 0 ? (
-          <p className='error'>{errors.email}</p>
+          <p data-cy='email-error' className='error'>{errors.email}</p>
         ) : null}
       </label>
       <label htmlFor='motivation'>
         Why would you like to help?
         <textarea
+          id='motivation'
           name='motivation'
           value={formState.motivation}
           onChange={inputChange}
@@ -149,7 +150,7 @@ export default function Form() {
       </label>
       {/* displaying our post request data */}
       <pre>{JSON.stringify(post, null, 2)}</pre>
-      <button disabled={buttonDisabled}>Submit</button>
+      <button id='submit' disabled={buttonDisabled}>Submit</button>
     </form>
   );
 }
